@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+    <div class="main  min-h-screen bg-zinc-900 text-zinc-400">
+        <div class="nav p-3 ">
+            <nav>
+                <a href="/" class="text-yellow-500">Home</a>
+            </nav>
+        </div>
+        <div class="title p-3 mb-5 block w-full  text-center">
+            <h2 class="text-3xl font-bold">All Users</h2>
+        </div>
+        <div class="users p-3 flex items-center justify-center flex-wrap gap-7">
+            <% if (users.length>0) { %>
+                <% users.forEach((user)=>{%>
+                    <div class="user bg-zinc-700 rounded-lg flex flex-col items-center justify-center p-4 gap-2">
+                        <img src="<%= user.image %>" alt="User Image" class="w-60 h-60 rounded-lg object-cover">
+                        <p class="text-white font-semibold">
+                            <%= user.name %>
+                        </p>
+                        <p class="text-gray-200 text-sm">
+                            <%= user.email %>
+                        </p>
+                        <div class="btns flex gap-3 items-center justify-center text-white">
+                            <button class="p-3 bg-red-800 rounded-lg cursor-pointer"><a
+                                    href="/delete/<%= user._id %>">Delete</a></button>
+                            <button class="p-3 bg-green-800 rounded-lg cursor-pointer"><a
+                                    href="/update_user/<%= user._id %>">Update</a></button>
+                        </div>
+                    </div>
+                    <%})%>
+                        <%} else {%>
+                            <p>No users found</p>
+                            <%}%>
+        </div>
+
+    </div>
+</body>
+
+</html>

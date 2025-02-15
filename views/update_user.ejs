@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+    <div class="main  min-h-screen bg-zinc-900 text-zinc-400">
+        <div class="nav p-3 flex gap-2">
+            <nav>
+                <a href="/" class="text-yellow-500">Home</a>
+            </nav>
+            <nav>
+                <a href="/view_users" class="text-blue-500">View users</a>
+            </nav>
+        </div>
+        <div class="title p-3 mb-5 block w-full  text-center">
+            <h2 class="text-3xl font-bold">Update User</h2>
+        </div>
+
+        <form action="/update/<%= user._id %>" method="post">
+            <div class="p-3 flex flex-col gap-3 justify-center items-center">
+                <div class="inputs">
+                    <p>current name : <%= user.name %>
+                    </p>
+                    <input class="p-3 outline-none border-2 w-80 border-zinc-500 rounded-lg" type="text" name="name"
+                        id="name" placeholder="update the name here..">
+                </div>
+                <div class="inputs">
+                    <p>current email : <%=user.email%>
+                    </p>
+                    <input class="p-3 outline-none border-2 w-80 border-zinc-500 rounded-lg" type="email" name="email"
+                        id="email" placeholder="Update the email here..">
+                </div>
+                <div class="inputs flex flex-col gap-2 items-start justify-center">
+                    <p>current image</p>
+                    <img src=<%=user.image%> alt="" srcset="" class="w-40 h-40 rounded-lg object-cover">
+                    <input class="p-3 outline-none border-2 w-80 border-zinc-500 rounded-lg" type="text" name="image"
+                        id="image" placeholder="Update the image url here..">
+                </div>
+                <button class="p-3 outline-none bg-green-600 rounded-lg text-white cursor-pointer" type="submit">Update
+                    user</button>
+            </div>
+        </form>
+
+
+    </div>
+</body>
+
+</html>

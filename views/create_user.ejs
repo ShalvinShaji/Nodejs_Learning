@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+    <div class="main  min-h-screen bg-zinc-900 text-zinc-400">
+        <div class="nav p-3 ">
+            <nav>
+                <a href="/view_users" class="text-blue-500">View users</a>
+            </nav>
+        </div>
+        <div class="title p-3 mb-5 block w-full  text-center">
+            <h2 class="text-3xl font-bold">Add New User</h2>
+        </div>
+        <form action="/create" method="post">
+            <div class="p-3 flex flex-col gap-3 justify-center items-center">
+                <div class="inputs">
+                    <input class="p-3 outline-none border-2 w-80 border-zinc-500 rounded-lg" type="text" name="name"
+                        id="name" placeholder="enter the name here..">
+                </div>
+                <div class="inputs">
+                    <input class="p-3 outline-none border-2 w-80 border-zinc-500 rounded-lg" type="email" name="email"
+                        id="email" placeholder="Enter the email here..">
+                </div>
+                <div class="inputs">
+                    <input class="p-3 outline-none border-2 w-80 border-zinc-500 rounded-lg" type="text" name="image"
+                        id="image" placeholder="Enter the image url here..">
+                </div>
+                <button class="p-3 outline-none bg-blue-600 rounded-lg text-white cursor-pointer" type="submit">create
+                    new
+                    user</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
